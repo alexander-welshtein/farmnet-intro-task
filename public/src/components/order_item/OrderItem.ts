@@ -1,6 +1,6 @@
 import "./OrderItem.scss"
 import Config from "../../render/Config"
-import Order from "../../models/Order"
+import Order from "../../../../src/components/order/Order"
 
 const OrderItem = (order: Order): Config => ({
     class: "OrderItem",

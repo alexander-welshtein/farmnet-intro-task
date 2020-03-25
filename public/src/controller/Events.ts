@@ -1,4 +1,4 @@
-import Order from "../models/Order"
+import Order from "../../../src/components/order/Order"
 import {Event} from "./Event"
 
 const Events = {

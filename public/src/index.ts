@@ -5,4 +5,4 @@ import OrderManager from "./models/OrderManager"
 
 document.body.appendChild(Renderer.render(Application()))
 
-new OrderManager().initialize()
+OrderManager.getInstance().initialize().then()

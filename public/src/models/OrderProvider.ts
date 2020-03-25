@@ -7,4 +7,8 @@ export default class OrderProvider {
         return HttpProvider.get("http://localhost:9000/order").then(response => response.json())
     }
 
+    public static get(id: number): Promise<Order> {
+        return HttpProvider.get(`http://localhost:9000/order/${id}`).then(response => response.json())
+    }
+
 }

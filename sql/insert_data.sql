@@ -21,10 +21,11 @@ VALUES
 	(1, now(),  'Moscow', 'N/A'),
 	(2, now(),  'Moscow', 'N/A'),
 	(3, now(),  'Moscow', 'N/A')
-	
+
 INSERT INTO order_content
 	(order_header_id, good_id, number)
 VALUES
 	(1, 1, 2),
 	(2, 2, 3),
-	(3, 3, 1)
+	(3, 3, 1),
+	(3, 2, 2)

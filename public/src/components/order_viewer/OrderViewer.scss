@@ -1,0 +1,14 @@
+.OrderViewer {
+    padding: 16px;
+    flex-basis: 50%;
+    box-sizing: border-box;
+    border-left: 1px solid #E0E0E0;
+
+    & > .header {
+        height: 48px;
+        line-height: 48px;
+        padding-left: 16px;
+        background-color: #16A085;
+        color: #FAFAFA;
+    }
+}

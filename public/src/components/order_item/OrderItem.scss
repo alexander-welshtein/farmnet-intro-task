@@ -1,12 +1,17 @@
 .OrderItem {
-    padding: 16px 0;
     display: grid;
-    grid-template-columns: 1fr .5fr 1fr 1fr .5fr;
+    grid-template-columns: 2px 1fr .5fr 1fr 1fr .5fr;
     cursor: pointer;
     transition: background-color .2s;
 
-    & > div {
-        padding-left: 16px;
+    & > .pointer {
+        background-color: #16A085;
+        opacity: 0;
+        transition: opacity .2s;
+    }
+
+    & > div:not(:first-child) {
+        padding: 16px 16px 16px 16px;
         line-height: 24px;
         word-wrap: break-word;
         word-break: break-all;
@@ -14,5 +19,11 @@
 
     &:hover {
         background-color: #FAFAFA;
+    }
+
+    &-selected {
+        & > .pointer {
+            opacity: 1;
+        }
     }
 }

@@ -1,3 +1,5 @@
+import Good from "../good/Good"
+
 export default interface Order {
     order_id: number
     sum: string
@@ -5,4 +7,5 @@ export default interface Order {
     name: string
     email: string
     city: string
+    goods: Good[]
 }

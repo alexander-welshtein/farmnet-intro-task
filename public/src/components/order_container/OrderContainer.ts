@@ -30,7 +30,7 @@ const OrderContainer = (): Config => ({
         {
             class: "content",
             onRender: element => {
-                Events.order.model.ORDER_LOADED.subscribe(orders => {
+                Events.order.model.ORDERS_LOADED.subscribe(orders => {
                     ElementUtil.createChildren(element, ...orders.map(order => OrderItem(order)))
                 })
             }

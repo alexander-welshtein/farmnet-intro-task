@@ -1,10 +1,14 @@
 import "./OrderItem.scss"
 import Config from "../../render/Config"
 import Order from "../../../../src/components/order/Order"
+import Events from "../../controller/Events"
 
 const OrderItem = (order: Order): Config => ({
     class: "OrderItem",
     children: [
+        {
+            class: "pointer"
+        },
         {
             text: order.time
         },
@@ -20,7 +24,20 @@ const OrderItem = (order: Order): Config => ({
         {
             text: order.city
         }
-    ]
+    ],
+    onRender: element => {
+        Events.order.view.ORDER_ITEM_SELECTED.subscribe(selectedOrder => {
+            if (selectedOrder.order_id == order.order_id) {
+                element.classList.add("OrderItem-selected")
+            } else {
+                element.classList.remove("OrderItem-selected")
+            }
+        })
+
+        element.onclick = () => {
+            Events.order.view.ORDER_ITEM_SELECTED.notify(order)
+        }
+    }
 })
 
 export default OrderItem

@@ -15,9 +15,13 @@ export default class OrderManager {
 
 
     public async initialize() {
-        const orders = await OrderProvider.getAll()
+        Events.order.view.ORDER_ITEM_SELECTED.subscribe(async selectedOrder => {
+            const order = await OrderProvider.get(selectedOrder.order_id)
 
-        Events.order.model.ORDER_LOADED.notify(orders)
+            Events.order.model.ORDER_LOADED.notify(order)
+        })
+
+        Events.order.model.ORDERS_LOADED.notify(await OrderProvider.getAll())
     }
 
 }

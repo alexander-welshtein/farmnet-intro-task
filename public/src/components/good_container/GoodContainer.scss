@@ -1,7 +1,7 @@
 .GoodContainer {
     width: 100%;
     height: 100%;
-    padding: 16px 0;
+    padding: 16px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -12,8 +12,8 @@
         display: grid;
         grid-template-columns: 1fr .5fr .5fr;
         grid-template-rows: 48px;
-        background-color: #16A085;
-        color: #FAFAFA;
+        color: #16A085;
+        border-bottom: 1px solid #E0E0E0;
 
         & > div {
             padding-left: 16px;
@@ -25,9 +25,16 @@
     & > .content {
         display: flex;
         flex-direction: column;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+}
 
-        border-width: 0 1px 1px 1px;
-        border-style: solid;
-        border-color: #E0E0E0;
+@keyframes OrderContainer-content-refresh {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

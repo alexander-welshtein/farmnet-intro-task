@@ -24,9 +24,14 @@ const GoodContainer = (): Config => ({
         {
             class: "content",
             onRender: element => {
+                element.onanimationend = () => {
+                    element.style.animationName = "none"
+                }
+
                 Events.order.model.ORDER_LOADED.subscribe(order => {
                     ElementUtil.clear(element)
                     ElementUtil.createChildren(element, ...order.goods.map(good => GoodItem(good)))
+                    element.style.animationName = "OrderContainer-content-refresh"
                 })
             }
         }

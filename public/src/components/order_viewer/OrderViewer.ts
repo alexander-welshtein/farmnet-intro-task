@@ -15,7 +15,12 @@ const OrderViewer = (): Config => ({
             }
         },
         GoodContainer()
-    ]
+    ],
+    onRender: element => {
+        Events.order.view.ORDER_ITEM_SELECTED.subscribe(() => {
+            element.classList.add("OrderViewer-displayed")
+        })
+    }
 })
 
 export default OrderViewer

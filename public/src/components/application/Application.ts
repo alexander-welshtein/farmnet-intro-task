@@ -6,7 +6,16 @@ import OrderViewer from "../order_viewer/OrderViewer"
 const Application = (): Config => ({
     class: "Application",
     children: [
-        OrderContainer(),
+        {
+            class: "workspace",
+            children: [
+                {
+                    class: "header",
+                    text: "FARMNET PLUS"
+                },
+                OrderContainer()
+            ]
+        },
         OrderViewer()
     ]
 })

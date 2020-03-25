@@ -1,0 +1,12 @@
+.OrderItem {
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr .5fr 1fr 1fr .5fr;
+    grid-template-rows: 48px;
+
+    & > div {
+        padding-left: 8px;
+        line-height: 48px;
+        overflow: hidden;
+    }
+}

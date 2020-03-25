@@ -2,10 +2,11 @@
     "name": "farmnet-intro-task-frontend",
     "version": "1.0.0",
     "description": "",
-    "main": "src/index.ts",
+    "main": "public/src/index.ts",
     "scripts": {
         "watch": "webpack --watch --mode development",
-        "dev": "webpack-dev-server --mode development"
+        "dev": "ts-node-dev --respawn --transpileOnly ./src/index.ts",
+        "prod": "tsc && node ./dist/index.js"
     },
     "repository": {
         "type": "git",
@@ -17,10 +18,16 @@
         "url": "https://github.com/alexander-welshtein/farmnet-intro-task-frontend/issues"
     },
     "homepage": "https://github.com/alexander-welshtein/farmnet-intro-task-frontend#readme",
+    "dependencies": {
+        "express": "latest",
+        "pg": "latest"
+    },
     "devDependencies": {
+        "@types/node": "latest",
+        "@types/express": "latest",
+        "@types/pg": "latest",
         "webpack": "latest",
         "webpack-cli": "latest",
-        "webpack-dev-server": "latest",
         "html-webpack-plugin": "latest",
         "typescript": "latest",
         "ts-loader": "latest",
@@ -29,6 +36,7 @@
         "style-loader": "latest",
         "css-loader": "latest",
         "node-sass": "latest",
-        "sass-loader": "latest"
+        "sass-loader": "latest",
+        "ts-node-dev": "latest"
     }
 }

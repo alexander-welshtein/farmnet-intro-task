@@ -1,8 +1,9 @@
-import "./index.scss"
-import Renderer from "./render/Renderer"
-import Application from "./components/application/Application"
-import OrderManager from "./models/OrderManager"
+import express = require("express");
 
-document.body.appendChild(Renderer.render(Application()))
+const application = express()
 
-new OrderManager().initialize()
+application.use(express.static("public/dist"))
+
+application.listen(9000, () => {
+    console.info("Server starting")
+})

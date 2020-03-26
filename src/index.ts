@@ -3,6 +3,7 @@ import DatabaseProvider from "./systems/DatabaseProvider"
 import LoggingMiddleware from "./middlewares/LogginMiddleware"
 import OrderController from "./components/order/OrderController"
 
+// Quick initialization of database connection
 DatabaseProvider.initialize({
     host: "localhost",
     port: 5432,
@@ -11,12 +12,16 @@ DatabaseProvider.initialize({
     password: "5115"
 })
 
+// Initialization of global client for working with a database
 DatabaseProvider.initializeGlobalClient().then(() => {
     const application = express()
 
+    // Static files serving
     application.use(express.static("public/dist"))
+
     application.use(LoggingMiddleware)
 
+    // Add order routing
     application.use("/order", OrderController.route())
 
     application.listen(9000, () => {

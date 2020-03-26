@@ -1,6 +1,8 @@
-
 import {Pool, PoolClient, PoolConfig, QueryConfig, QueryResult} from "pg"
 
+/**
+ * Provides abstraction for working with the PostgreSQL driver.
+ */
 export default class DatabaseProvider {
     private static pool: Pool
 

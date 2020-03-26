@@ -1,6 +1,9 @@
 import Order from "./Order"
 import DatabaseProvider from "../../systems/DatabaseProvider"
 
+/**
+ * Mapping for orders.
+ */
 const OrderMapper = {
     getAll: (): Promise<Order[]> => DatabaseProvider.globalQuery(`
             SELECT

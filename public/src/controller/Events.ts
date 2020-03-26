@@ -1,6 +1,9 @@
 import Order from "../../../src/components/order/Order"
 import {Event} from "./Event"
 
+/**
+ * Application event list.
+ */
 const Events = {
     order: {
         model: {

@@ -3,6 +3,9 @@ import Config from "../../utility/render/Config"
 import Events from "../../controller/Events"
 import GoodContainer from "../good_container/GoodContainer"
 
+/**
+ * Panel providing additional order data.
+ */
 const OrderViewer = (): Config => ({
     class: "OrderViewer",
     children: [

@@ -1,6 +1,9 @@
 import Events from "../controller/Events"
 import OrderProvider from "./OrderProvider"
 
+/**
+ * Interacts with order data.
+ */
 export default class OrderManager {
 
     private static instance: OrderManager

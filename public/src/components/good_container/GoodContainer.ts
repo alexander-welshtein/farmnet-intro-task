@@ -5,6 +5,9 @@ import ElementUtil from "../../utility/render/ElementUtil"
 import GoodItem from "../good_item/GoodItem"
 import AnimationMagic from "../../utility/AnimationMagic"
 
+/**
+ * Good list view.
+ */
 const GoodContainer = (): Config => ({
     class: "GoodContainer",
     children: [

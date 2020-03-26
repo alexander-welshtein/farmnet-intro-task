@@ -1,3 +1,6 @@
+/**
+ * Defines the main object for creating an event.
+ */
 export class Event<T> {
     private static debugged: boolean
 

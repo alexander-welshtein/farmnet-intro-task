@@ -5,6 +5,9 @@ import ElementUtil from "../../utility/render/ElementUtil"
 import OrderItem from "../order_item/OrderItem"
 import AnimationMagic from "../../utility/AnimationMagic"
 
+/**
+ * Order list view.
+ */
 const OrderContainer = (): Config => ({
     class: "OrderContainer",
     children: [

@@ -1,5 +1,8 @@
 import express = require("express");
 
+/**
+ * Simple logging middleware
+ */
 const LoggingMiddleware = (req: express.Request, res: express.Response, next: express.NextFunction) => {
     console.info(new Date().toLocaleString() + " " + req.method + " " + req.url)
     if (req.body) {

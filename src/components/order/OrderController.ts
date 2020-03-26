@@ -1,6 +1,9 @@
 import express = require("express")
 import OrderMapper from "./OrderMapper"
 
+/**
+ * Routing for orders.
+ */
 const OrderController ={
     route: (): express.Router => {
         const router = express.Router()

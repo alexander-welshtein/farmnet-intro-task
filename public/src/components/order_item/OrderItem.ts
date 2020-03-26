@@ -3,6 +3,10 @@ import Config from "../../utility/render/Config"
 import Order from "../../../../src/components/order/Order"
 import Events from "../../controller/Events"
 
+/**
+ * Order item view.
+ * @param order - Order data
+ */
 const OrderItem = (order: Order): Config => ({
     class: "OrderItem",
     children: [

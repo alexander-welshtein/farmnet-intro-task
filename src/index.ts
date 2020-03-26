@@ -1,4 +1,4 @@
-import express = require("express");
+import * as express from "express"
 import DatabaseProvider from "./systems/DatabaseProvider"
 import LoggingMiddleware from "./middlewares/LogginMiddleware"
 import OrderController from "./components/order/OrderController"
@@ -17,7 +17,7 @@ DatabaseProvider.initializeGlobalClient().then(() => {
     const application = express()
 
     // Static files serving
-    application.use(express.static("public/dist"))
+    application.use(express.static("dist/public"))
 
     application.use(LoggingMiddleware)
 

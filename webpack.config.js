@@ -1,19 +1,21 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const nodeExternals = require("webpack-node-externals")
 
-module.exports = {
+const frontConfig = {
+    target: "web",
     entry: "./public/src/index.ts",
     devtool: "inline-source-map",
-    resolve: {
-        extensions: [".ts", ".js"]
-    },
     output: {
-        path: path.resolve(__dirname, "public/dist"),
+        path: path.resolve(__dirname, "dist/public"),
         filename: "bundle.js"
     },
     plugins: [new HtmlWebpackPlugin({
         template: "./public/src/index.html"
     })],
+    resolve: {
+        extensions: [".ts", ".js"]
+    },
     module: {
         rules: [
             {
@@ -42,3 +44,29 @@ module.exports = {
         ]
     }
 }
+
+const backConfig = {
+    target: "node",
+    entry: {
+        app: ["./src/index.ts"]
+    },
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js"
+    },
+    resolve: {
+        extensions: [".ts", ".js"]
+    },
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                use: "ts-loader",
+                exclude: /node_modules/
+            }
+        ]
+    },
+    externals: [nodeExternals()]
+}
+
+module.exports = [frontConfig, backConfig]

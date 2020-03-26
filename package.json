@@ -5,8 +5,8 @@
     "main": "public/src/index.ts",
     "scripts": {
         "watch": "webpack --watch --mode development",
-        "dev": "ts-node-dev --respawn --transpileOnly ./src/index.ts",
-        "prod": "tsc && node ./dist/index.js"
+        "build": "webpack --mode production",
+        "run": "node ./dist/bundle.js"
     },
     "repository": {
         "type": "git",
@@ -29,6 +29,7 @@
         "webpack": "latest",
         "webpack-cli": "latest",
         "html-webpack-plugin": "latest",
+        "webpack-node-externals": "latest",
         "typescript": "latest",
         "ts-loader": "latest",
         "file-loader": "latest",

@@ -1,5 +1,5 @@
 import "./OrderItem.scss"
-import Config from "../../render/Config"
+import Config from "../../utility/render/Config"
 import Order from "../../../../src/components/order/Order"
 import Events from "../../controller/Events"
 

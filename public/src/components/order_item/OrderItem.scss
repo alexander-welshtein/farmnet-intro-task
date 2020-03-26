@@ -3,9 +3,10 @@
     grid-template-columns: 2px 1fr .5fr 1fr 1fr .5fr;
     cursor: pointer;
     transition: background-color .2s;
+    color: #616161;
 
     & > .pointer {
-        background-color: #16A085;
+        background-color: #009688;
         opacity: 0;
         transition: opacity .2s;
     }
@@ -15,6 +16,11 @@
         line-height: 24px;
         word-wrap: break-word;
         word-break: break-all;
+
+        &::selection {
+            background-color: #009688;
+            color: #FAFAFA;
+        }
     }
 
     &:hover {

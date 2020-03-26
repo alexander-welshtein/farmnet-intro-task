@@ -1,5 +1,5 @@
 import "./OrderViewer.scss"
-import Config from "../../render/Config"
+import Config from "../../utility/render/Config"
 import Events from "../../controller/Events"
 import GoodContainer from "../good_container/GoodContainer"
 

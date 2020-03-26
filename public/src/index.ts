@@ -1,5 +1,5 @@
 import "./index.scss"
-import Renderer from "./render/Renderer"
+import Renderer from "./utility/render/Renderer"
 import Application from "./components/application/Application"
 import OrderManager from "./models/OrderManager"
 import {Event} from "./controller/Event"

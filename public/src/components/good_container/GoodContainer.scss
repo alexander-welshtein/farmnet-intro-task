@@ -12,8 +12,9 @@
         display: grid;
         grid-template-columns: 1fr .5fr .5fr;
         grid-template-rows: 48px;
-        color: #16A085;
+        color: #009688;
         border-bottom: 1px solid #E0E0E0;
+        user-select: none;
 
         & > div {
             padding-left: 16px;
@@ -25,12 +26,16 @@
     & > .content {
         display: flex;
         flex-direction: column;
+    }
+
+    &-refresh-animated {
+        animation-name: GoodContainer-refresh;
         animation-duration: 1s;
         animation-fill-mode: forwards;
     }
 }
 
-@keyframes OrderContainer-content-refresh {
+@keyframes GoodContainer-refresh {
     from {
         opacity: 0;
     }

@@ -1,8 +1,9 @@
 import "./OrderContainer.scss"
-import Config from "../../render/Config"
+import Config from "../../utility/render/Config"
 import Events from "../../controller/Events"
-import ElementUtil from "../../render/ElementUtil"
+import ElementUtil from "../../utility/render/ElementUtil"
 import OrderItem from "../order_item/OrderItem"
+import AnimationMagic from "../../utility/AnimationMagic"
 
 const OrderContainer = (): Config => ({
     class: "OrderContainer",
@@ -33,6 +34,8 @@ const OrderContainer = (): Config => ({
                 Events.order.model.ORDERS_LOADED.subscribe(orders => {
                     ElementUtil.createChildren(element, ...orders.map(order => OrderItem(order)))
                 })
+
+                AnimationMagic.restartAnimation(element, "GoodContainer-refresh-animated")
             }
         }
     ]

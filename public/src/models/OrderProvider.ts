@@ -1,5 +1,5 @@
 import Order from "../../../src/components/order/Order"
-import HttpProvider from "../net/HttpProvider"
+import HttpProvider from "../utility/net/HttpProvider"
 
 export default class OrderProvider {
 

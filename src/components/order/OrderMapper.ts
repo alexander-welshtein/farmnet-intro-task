@@ -24,7 +24,7 @@ const OrderMapper = {
         SELECT
             oh.order_header_id AS "order_id",
             sum(g.cost * oc.number) AS "sum",
-            to_char(oh.time, 'YYYY-MM-DD HH24:MI:SS'),
+            to_char(oh.time, 'YYYY-MM-DD HH24:MI:SS') AS "time",
             c.name,
             c.email,
             oh.city,
